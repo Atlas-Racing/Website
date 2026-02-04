@@ -205,7 +205,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Contact
 
 - **Website**: [https://atlasracing.ae](https://atlasracing.ae)
-- **Instagram**: [@atlasracing.ae](https://www.instagram.com/atlasracing.ae)
+- **Instagram**: [@atlasracinghwud](https://www.instagram.com/atlasracinghwud/)
 - **LinkedIn**: [Atlas Racing](https://linkedin.com/company/atlas-racing)
 
 For any inquiries, please visit our website or reach out through our social media channels.
