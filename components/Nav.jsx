@@ -16,6 +16,10 @@ const Links = [
         path: '/driverless'
     },
     {
+        name: "Gallery",
+        path: '/gallery'
+    },
+    {
         name: "GT",
         path: '/gt'
     },
@@ -45,4 +49,4 @@ const Nav = () => {
     )
 }
 
-export default Nav
+export default Nav;
