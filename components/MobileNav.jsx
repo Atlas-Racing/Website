@@ -13,7 +13,8 @@ const Links = [
     { name: "Gallery", path: '/gallery' },
     { name: "GT", path: '/gt' },
     { name: "Sponsors", path: '/sponsors' },
-    { name: "Contact", path: '/contact' }
+    { name: "Contact", path: '/contact' },
+    { name: "Gallery", path: '/gallery' },
 ];
 
 const MobileNav = () => {
@@ -31,7 +32,7 @@ const MobileNav = () => {
             </SheetTrigger>
             <SheetContent className="flex flex-col">
                 {/* Logo */}
-                <div className="mt-32 mb-40 text-center text-2xl">
+                <div className="mt-20 mb-24 text-center text-2xl">
                     <Link href="/" onClick={handleLinkClick}>
                         <h1 className="text-4xl font-semibold">
                             <span className="font-normal">Atlas</span>

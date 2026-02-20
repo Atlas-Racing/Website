@@ -17,7 +17,7 @@ const Photo = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1, transition: { delay: 2.4, duration: 0.4, ease: "easeInOut" } }}
                 >
-                    {/* <Image src="/assets/photo.png" priority quality={100} fill alt="" className="object-contain rounded-full" /> */}
+                    <Image src="/assets/team/group/group.JPG" priority quality={100} fill alt="" className="object-contain rounded-full"/>
                 </motion.div>
 
                 {/* Circle */}
