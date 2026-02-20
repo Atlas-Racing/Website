@@ -109,9 +109,9 @@ const concept = {
       image: "Laith.png"
     },
     {
-      name: "Pranav M",
+      name: "Panav M",
       position: "Concept Class Member",
-      image: "Pranav.png"
+      image: "Panav.png"
     },
     {
       name: "Jeremy G",
@@ -462,7 +462,7 @@ const About = () => {
                     onScroll={handleScroll}
                   >
                     <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
-                      {driverless.items.map((driverless, index) => {
+                      {driverless?.items?.map((driverless, index) => {
                         return (
                           <li
                             key={index}
@@ -531,7 +531,7 @@ const About = () => {
                     onScroll={handleScroll}
                   >
                     <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
-                      {concept.items.map((conceptItem, index) => {
+                      {concept?.items?.map((conceptItem, index) => {
                         return (
                           <li
                             key={index}
@@ -600,7 +600,7 @@ const About = () => {
                     onScroll={handleScroll}
                   >
                     <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
-                      {outreach.items.map((outreachItem, index) => {
+                      {outreach?.items?.map((outreachItem, index) => {
                         return (
                           <li
                             key={index}
@@ -669,7 +669,7 @@ const About = () => {
                     onScroll={handleScroll}
                   >
                     <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
-                      {design.items.map((designItem, index) => {
+                      {design?.items?.map((designItem, index) => {
                         return (
                           <li
                             key={index}
