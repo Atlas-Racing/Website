@@ -1,147 +1,111 @@
 "use client";
 
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/autoplay";
+import { Autoplay } from "swiper/modules";
 
 const Sponsors = () => {
   const LegacySponsors = [
-    {
-      image: "/assets/images/logos/heriot.png"
-    },
-    {
-      image: "/assets/images/logos/liverpool.png"
-    },
-    // {
-    //   image: "/assets/images/logos/oceanworks.png"
-    // },
-    {
-      image: "/assets/images/logos/siemens.png"
-    },
+    { image: "/assets/images/sponsors/ansys.png" },
+    { image: "/assets/images/sponsors/heriot.png" },
+    { image: "/assets/images/sponsors/hwueps.png",  large: true },
+    { image: "/assets/images/sponsors/hwumacs.png", large: true },
+    { image: "/assets/images/sponsors/ipg.png" },
+    { image: "/assets/images/sponsors/liverpool.png" },
+    { image: "/assets/images/sponsors/morai.png" },
+    { image: "/assets/images/sponsors/siemens.png" },
   ];
+
+  const GTSponsor = { image: "/assets/images/sponsors/bond_interiors.png" };
+
+  const LogoCard = ({ src, alt, large = false }) => (
+    <div
+      className="flex items-center justify-center bg-gray-800 rounded-lg"
+      style={{
+        width: large ? "280px" : "220px",
+        height: large ? "180px" : "140px",
+        padding: "12px",
+      }}
+    >
+      <div style={{ position: "relative", width: "100%", height: "100%" }}>
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          sizes={large ? "280px" : "220px"}
+          style={{ objectFit: "contain", objectPosition: "center" }}
+        />
+      </div>
+    </div>
+  );
 
   return (
     <section>
       <div className="container mx-auto py-8">
         {/* Title Section */}
-        <div className="mb-6 justify-center mt-[100px] xl:mt-0">
-          <h1 className="text-4xl font-bold text-accent text-center">Legacy Sponsors</h1>
-            <p className="text-white/80 text-sm text-center max-w-[900px] mx-auto mt-5">
-                Our Legacy Sponsors are those who've stood by us since the beginning. Their early belief laid the foundation for everything we've built, and they'll forever be a part of our journey
-            </p>
+        <div className="mb-6 mt-[100px] xl:mt-0">
+          <h1 className="text-4xl font-bold text-accent text-center">Our Sponsors</h1>
+          <p className="text-white/80 text-sm text-center max-w-[900px] mx-auto mt-5">
+            Our sponsors have been instrumental in our journey. Legacy Sponsors have supported us
+            from the beginning, while GT Sponsors represent our growth and future.
+          </p>
         </div>
-        
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-8 items-center justify-items-center w-full max-w-4xl mx-auto">
-          {LegacySponsors.map((sponsor, index) => (
-            <div
-              key={index}
-              className="flex justify-center items-center p-4 rounded-lg"
+
+        {/* HEADINGS ROW */}
+        <div className="flex gap-6 mb-4 items-center">
+          {/* GT Sponsor — left aligned */}
+          <div className="w-1/5">
+            <h2 className="text-2xl font-semibold text-accent">GT Sponsor</h2>
+          </div>
+          {/* Sponsors — centered in its 80% column */}
+          <div className="w-4/5 text-center">
+            <h2 className="text-2xl font-semibold text-accent">Sponsors</h2>
+          </div>
+        </div>
+
+        {/* LOGOS ROW */}
+        <div className="flex gap-6 items-center">
+
+          {/* GT Sponsor logo - 20% */}
+          <div className="w-1/5 flex justify-center">
+            <LogoCard src={GTSponsor.image} alt="GT Sponsor" />
+          </div>
+
+          {/* Legacy Sponsors swiper - 80% */}
+          <div className="w-4/5">
+            <Swiper
+              className="w-full"
+              modules={[Autoplay]}
+              spaceBetween={20}
+              slidesPerView={3}
+              loop={true}
+              autoplay={{
+                delay: 2000,
+                disableOnInteraction: false,
+              }}
+              breakpoints={{
+                640: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+              }}
             >
-              <Image
-                src={sponsor.image}
-                alt={`Legacy Sponsor ${index + 1}`}
-                width={200}
-                height={100}
-                className="object-contain max-w-full h-auto"
-              />
-            </div>
-          ))}
+              {LegacySponsors.map((sponsor, index) => (
+                <SwiperSlide key={index}>
+                  <div className="flex justify-center py-2">
+                    <LogoCard
+                      src={sponsor.image}
+                      alt={`Sponsor ${index + 1}`}
+                      large={sponsor.large}
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+
         </div>
       </div>
-
-      {/* <div className="container mx-auto py-8">
-        <div className="mb-6 justify-center">
-          <h1 className="text-4xl font-bold text-accent text-center">Fusion Sponsors</h1>
-            <p className="text-white/80 text-sm text-center max-w-[900px] mx-auto mt-5">
-                Fusion partners are embedded in our journey. They contribute to key systems and share our vision for innovation and collaboration
-            </p>
-        </div>
-
-        <div className="flex flex-col xl:flex-row flex-wrap gap-6 max-w-[80vw] mx-auto md:max-w-none">
-          {Sponsors.map((stat, index) => (
-            <div
-              key={index}
-              className="flex-1 grid grid-cols-2 gap-4 items-center w-full justify-center p-4 rounded-lg xl:bg-transparent"
-            >
-              <div className="flex justify-center items-center">
-                <CountUp
-                  end={stat.num}
-                  duration={5}
-                  delay={1}
-                  className="text-5xl xl:text-7xl font-extrabold text-accent/80"
-                />
-              </div>
-              <div className="flex justify-start items-center">
-                <p className="leading-snug text-white/80 text-left">
-                  {stat.text}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="container mx-auto py-8">
-        <div className="mb-6 justify-center">
-          <h1 className="text-4xl font-bold text-accent text-center">Momentum Sponsors</h1>
-            <p className="text-white/80 text-sm text-center max-w-[900px] mx-auto mt-5">
-                Sponsors at this level help us gain speed, whether through hardware, logistics, or domain expertise, they drive meaningful progress
-            </p>
-        </div>
-
-        <div className="flex flex-col xl:flex-row flex-wrap gap-6 max-w-[80vw] mx-auto md:max-w-none">
-          {Sponsors.map((stat, index) => (
-            <div
-              key={index}
-              className="flex-1 grid grid-cols-2 gap-4 items-center w-full justify-center p-4 rounded-lg xl:bg-transparent"
-            >
-              <div className="flex justify-center items-center">
-                <CountUp
-                  end={stat.num}
-                  duration={5}
-                  delay={1}
-                  className="text-5xl xl:text-7xl font-extrabold text-accent/80"
-                />
-              </div>
-              <div className="flex justify-start items-center">
-                <p className="leading-snug text-white/80 text-left">
-                  {stat.text}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="container mx-auto py-8">
-        <div className="mb-6 justify-center">
-          <h1 className="text-4xl font-bold text-accent text-center">Ignition Sponsors</h1>
-            <p className="text-white/80 text-sm text-center max-w-[900px] mx-auto mt-5">
-                Every great journey starts with a spark. Ignition sponsors fuel the foundation of our mission by supporting core resources
-            </p>
-        </div>
-
-        <div className="flex flex-col xl:flex-row flex-wrap gap-6 max-w-[80vw] mx-auto md:max-w-none">
-          {Sponsors.map((stat, index) => (
-            <div
-              key={index}
-              className="flex-1 grid grid-cols-2 gap-4 items-center w-full justify-center p-4 rounded-lg xl:bg-transparent"
-            >
-              <div className="flex justify-center items-center">
-                <CountUp
-                  end={stat.num}
-                  duration={5}
-                  delay={1}
-                  className="text-5xl xl:text-7xl font-extrabold text-accent/80"
-                />
-              </div>
-              <div className="flex justify-start items-center">
-                <p className="leading-snug text-white/80 text-left">
-                  {stat.text}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div> */}
     </section>
   );
 };
