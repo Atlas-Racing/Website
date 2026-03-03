@@ -53,27 +53,27 @@ const Sponsors = () => {
           </p>
         </div>
 
-        {/* HEADINGS ROW */}
-        <div className="flex gap-6 mb-4 items-center">
-          {/* GT Sponsor — left aligned */}
-          <div className="w-1/5">
+                {/* HEADINGS ROW — sits above the logos */}
+        <div className="flex gap-6">
+          {/* GT Sponsor heading - aligned to 20% column */}
+          <div className="w-1/5 flex justify-start">
             <h2 className="text-2xl font-semibold text-accent">GT Sponsor</h2>
           </div>
-          {/* Sponsors — centered in its 80% column */}
-          <div className="w-4/5 text-center">
+          {/* Sponsors heading - centered in 80% column */}
+          <div className="w-3/6 flex justify-center">
             <h2 className="text-2xl font-semibold text-accent">Sponsors</h2>
           </div>
         </div>
 
-        {/* LOGOS ROW */}
-        <div className="flex gap-6 items-center">
+              {/* LOGOS ROW */}
+        <div className="flex gap-6 items-center mt-4">
 
-          {/* GT Sponsor logo - 20% */}
+          {/* GT Sponsor Column - 20% */}
           <div className="w-1/5 flex justify-center">
             <LogoCard src={GTSponsor.image} alt="GT Sponsor" />
           </div>
 
-          {/* Legacy Sponsors swiper - 80% */}
+          {/* Legacy Sponsors Column - 80% */}
           <div className="w-4/5">
             <Swiper
               className="w-full"
