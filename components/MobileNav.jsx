@@ -14,7 +14,6 @@ const Links = [
     { name: "GT", path: '/gt' },
     { name: "Sponsors", path: '/sponsors' },
     { name: "Contact", path: '/contact' },
-    { name: "Gallery", path: '/gallery' },
 ];
 
 const MobileNav = () => {

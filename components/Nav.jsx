@@ -31,10 +31,6 @@ const Links = [
         name: "contact",
         path: '/contact'
     },
-    {
-        name: "Gallery",
-        path: '/gallery'
-    },
 ];
 
 const Nav = () => {
