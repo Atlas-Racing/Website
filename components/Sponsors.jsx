@@ -48,25 +48,25 @@ const Sponsors = () => {
         <div className="mb-6 mt-[100px] xl:mt-0">
           <h1 className="text-4xl font-bold text-accent text-center">Our Sponsors</h1>
           <p className="text-white/80 text-sm text-center max-w-[900px] mx-auto mt-5">
-            Our sponsors have been instrumental in our journey. Legacy Sponsors have supported us
-            from the beginning, while GT Sponsors represent our growth and future.
+            Our sponsors have been instrumental in our journey. GT Sponsors represent our growth and future, while other Sponsors have supported us
+            from the beginning.
           </p>
         </div>
 
-                {/* HEADINGS ROW — sits above the logos */}
-        <div className="flex gap-6">
-          {/* GT Sponsor heading - aligned to 20% column */}
-          <div className="w-1/5 flex justify-start">
+        {/* HEADINGS ROW — sits above the logos */}
+        <div className="flex items-center gap-6 mt-4">
+          {/* GT Sponsor heading - 20% column */}
+          <div className="w-1/5 flex justify-center items-center">
             <h2 className="text-2xl font-semibold text-accent">GT Sponsor</h2>
           </div>
-          {/* Sponsors heading - centered in 80% column */}
-          <div className="w-3/6 flex justify-center">
+          {/* Sponsors heading - 80% column */}
+          <div className="w-4/5 flex justify-center items-center">
             <h2 className="text-2xl font-semibold text-accent">Sponsors</h2>
           </div>
         </div>
 
               {/* LOGOS ROW */}
-        <div className="flex gap-6 items-center mt-4">
+        <div className="flex gap-6 items-center">
 
           {/* GT Sponsor Column - 20% */}
           <div className="w-1/5 flex justify-center">
