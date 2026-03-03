@@ -41,7 +41,7 @@ const Home = () => {
           <div className="text-center xl:text-left order-2 xl:order-none">
             <span ref={typedElementRef} className="text-[18px] md:text-[24px] font-mono"></span>
             <h1 className="h1 mb-6">
-              <span className="font-normal">Introducing</span><br />
+              <span className="font-normal">Aaron the goat</span><br />
               <span className="text-accent font-bold">Atlas Racing</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80 text-sm md:text:mg lg:text-lg">
