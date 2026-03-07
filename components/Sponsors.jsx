@@ -60,8 +60,8 @@ const Sponsors = () => {
             <h2 className="text-2xl font-semibold text-accent">GT Sponsor</h2>
           </div>
           {/* Sponsors heading - 80% column */}
-          <div className="w-4/5 flex justify-center items-center">
-            <h2 className="text-2xl font-semibold text-accent">Sponsors</h2>
+          <div className="w-3/5 flex justify-center items-center">
+            <h2 className="text-2xl font-semibold text-accent">FICA Sponsors</h2>
           </div>
         </div>
 
