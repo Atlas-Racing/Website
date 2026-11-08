@@ -4,14 +4,16 @@ import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaInstagram } from "react-icons/fa";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import Link from "next/link";
 
 const info = [
-  { icon: <FaPhoneAlt />, title: "Phone", description: "+971 54 354 7825" },
-  { icon: <FaEnvelope />, title: "Email", description: "atlasracing@hw.ac.uk" },
-  { icon: <FaEnvelope />, title: "Driverless Team", description: "atlasracingdriverless@hw.ac.uk" },
+  { icon: <FaPhoneAlt />, title: "Phone", description: "+971 54 354 7825", href: "tel:+971543547825" },
+  { icon: <FaEnvelope />, title: "Email", description: "atlasracing@hw.ac.uk", href: "mailto:atlasracing@hw.ac.uk" },
+  { icon: <FaEnvelope />, title: "Driverless Team", description: "atlasracingdriverless@hw.ac.uk", href: "mailto:atlasracingdriverless@hw.ac.uk" },
+  { icon: <FaInstagram />, title: "Instagram", description: "@atlasracinghwud", href: "https://www.instagram.com/atlasracinghwud?exln=MTh4NnJraHg0ZW0xYg==" },
   { icon: <FaMapMarkerAlt />, title: "Address", description: "Dubai, UAE" },
 ];
 
@@ -92,17 +94,37 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
             <ul className="flex flex-col gap-10">
-              {info.map((item, index) => (
-                <li key={index} className="flex items-center gap-6">
-                  <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-accent text-accent rounded-full flex items-center justify-center">
-                    <div className="text-[28px] text-primary">{item.icon}</div>
+              {info.map((item, index) => {
+                const content = (
+                  <div className="flex items-center gap-6 group">
+                    <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-accent text-accent rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+                      <div className="text-[28px] text-primary">{item.icon}</div>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-white/60">{item.title}</p>
+                      <h3 className={`text-xl ${item.href ? "group-hover:text-accent transition-colors duration-300" : ""}`}>
+                        {item.description}
+                      </h3>
+                    </div>
                   </div>
-                  <div className="flex-1">
-                    <p className="text-white/60">{item.title}</p>
-                    <h3 className="text-xl">{item.description}</h3>
-                  </div>
-                </li>
-              ))}
+                );
+
+                return (
+                  <li key={index}>
+                    {item.href ? (
+                      <Link
+                        href={item.href}
+                        target={item.href.startsWith("http") ? "_blank" : undefined}
+                        rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      >
+                        {content}
+                      </Link>
+                    ) : (
+                      content
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>
