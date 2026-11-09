@@ -52,7 +52,7 @@ const Photo = () => {
                     width="98%"
                     height="96%"
                     alt="Atlas Racing Team"
-                    preserveAspectRatio="xMidYMid slice"
+                    preserveAspectRatio={currentIndex === 4 ? "xMidYMax slice" : "xMidYMid slice"}
                     clipPath="url(#roundedImageClip)"
                 />
     
