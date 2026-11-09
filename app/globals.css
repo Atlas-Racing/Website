@@ -3,8 +3,13 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply font-primary bg-primary text-white leading-loose;
+    overflow-x: hidden;
   }
 
   .h1 {
