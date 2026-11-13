@@ -10,6 +10,7 @@ const Links = [
     { name: 'Home', path: '/' },
     { name: "About Us", path: '/about' },
     { name: "Driverless", path: '/driverless' },
+    { name: "Car Model", path: '/model-test' },
     { name: "Gallery", path: '/gallery' },
     { name: "GT", path: '/gt' },
     { name: "Sponsors", path: '/sponsors' },

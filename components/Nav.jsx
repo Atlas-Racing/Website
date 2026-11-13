@@ -16,6 +16,10 @@ const Links = [
         path: '/driverless'
     },
     {
+        name: "Car Model",
+        path: '/model-test'
+    },
+    {
         name: "Gallery",
         path: '/gallery'
     },

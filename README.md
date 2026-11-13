@@ -86,6 +86,7 @@ Website/
 ├── public/                # Static assets
 │   ├── assets/           # Images and media
 │   └── logo/             # Logo files
+│   └── models/           # 3D Model of the car
 ├── lib/                   # Utility functions
 │   └── utils.js          # Helper utilities
 ├── tailwind.config.js     # Tailwind CSS configuration
