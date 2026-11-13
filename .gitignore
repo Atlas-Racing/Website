@@ -137,3 +137,9 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Local env files
+.env.local
+
+# CAD files
+/FS-AI_ADS-DV_CAD-main/
